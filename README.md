@@ -1,9 +1,5 @@
 # Projet Web Semantic 2: Ventes d'albums
 
-## Démo de l'application
-
-<video controls src="Presentation_project_WOD_APP.mp4" title="Title"></video>
-
 ## Description des ressources
 
 ### CSV
