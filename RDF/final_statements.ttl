@@ -1,0 +1,833 @@
+@prefix agg: <http://jena.apache.org/ARQ/function/aggregate#> .
+@prefix : <https://ecampus.paris-saclay.fr/wod/baradji-cannou/> .
+@prefix sail: <http://www.openrdf.org/config/sail#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geof: <http://www.opengis.net/def/function/geosparql/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix fn: <http://www.w3.org/2005/xpath-functions> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spif: <http://spinrdf.org/spif#> .
+@prefix path: <http://www.ontotext.com/path#> .
+@prefix array: <http://www.w3.org/2005/xpath-functions/array> .
+@prefix apf: <http://jena.apache.org/ARQ/property#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix rep: <http://www.openrdf.org/config/repository#> .
+@prefix map: <http://www.w3.org/2005/xpath-functions/map> .
+@prefix sr: <http://www.openrdf.org/config/repository/sail#> .
+@prefix wgs: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix afn: <http://jena.apache.org/ARQ/function#> .
+@prefix list: <http://jena.apache.org/ARQ/list#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ofn: <http://www.ontotext.com/sparql/functions/> .
+@prefix geoext: <http://rdf.useekm.com/ext#> .
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
+@prefix math: <http://www.w3.org/2005/xpath-functions/math> .
+@prefix omgeo: <http://www.ontotext.com/owlim/geo#> .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/> a owl:Ontology .
+
+:artist a owl:ObjectProperty, owl:Class;
+  rdfs:subPropertyOf owl:topObjectProperty;
+  rdfs:domain :album;
+  rdfs:range :artist .
+
+:album a owl:Class .
+
+:genre a owl:DatatypeProperty;
+  rdfs:subPropertyOf owl:topDataProperty;
+  rdfs:domain :album;
+  rdfs:range xsd:string .
+
+:name a owl:DatatypeProperty;
+  rdfs:subPropertyOf owl:topDataProperty;
+  rdfs:domain :artist, :album;
+  rdfs:range xsd:string .
+
+:recordLabel a owl:DatatypeProperty;
+  rdfs:domain :album;
+  rdfs:range xsd:string .
+
+:sales a owl:DatatypeProperty;
+  rdfs:subPropertyOf owl:topDataProperty;
+  rdfs:domain :album;
+  rdfs:range xsd:int .
+
+:year a owl:DatatypeProperty;
+  rdfs:subPropertyOf owl:topDataProperty;
+  rdfs:domain :album;
+  rdfs:range xsd:int .
+
+:Arashi a :artist;
+  :name "Arashi" .
+
+:5x20%20All%20The%20Best%21%21%201999-2019 a :album;
+  :artist :Arashi;
+  :genre "Pop";
+  :name "5x20 All The Best!! 1999-2019";
+  :sales "3,300,000";
+  :year "2019" .
+
+:Elton%20John a :artist;
+  :name "Elton John" .
+
+:Diamonds a :album;
+  :artist :Elton%20John;
+  :genre "Rock";
+  :name "Diamonds";
+  :recordLabel "Universal Music Group"@en, "The Rocket Record Company"@en, "Virgin EMI Records"@en;
+  :sales "3,220,000";
+  :year "2017" .
+
+:Broadway%20Soundtrack a :artist;
+  :name "Broadway Soundtrack" .
+
+:Hamilton a :album;
+  :artist :Broadway%20Soundtrack;
+  :genre "Hip Hop";
+  :name "Hamilton";
+  :sales "4,835,000";
+  :year "2015" .
+
+:BTS a :artist;
+  :name "BTS" .
+
+:Love%20Yourself%3A%20Answer a :album;
+  :artist :BTS;
+  :genre "Pop";
+  :name "Love Yourself: Answer";
+  :recordLabel "Hybe Corporation"@en;
+  :sales "4,866,789";
+  :year "2018" .
+
+:Morgan%20Wallen a :artist;
+  :name "Morgan Wallen" .
+
+:Dangerous%3A%20The%20Double%20Album a :album;
+  :artist :Morgan%20Wallen;
+  :genre "Country";
+  :name "Dangerous: The Double Album";
+  :recordLabel "Big Loud"@en;
+  :sales "3,461,000";
+  :year "2021" .
+
+:Drake a :artist;
+  :name "Drake" .
+
+:Scorpion a :album;
+  :artist :Drake;
+  :genre "Hip Hop";
+  :name "Scorpion";
+  :recordLabel "Republic Records"@en;
+  :sales "6,133,983";
+  :year "2018" .
+
+:Certified%20Lover%20Boy a :album;
+  :artist :Drake;
+  :genre "Hip Hop";
+  :name "Certified Lover Boy";
+  :recordLabel "Republic Records"@en, "OVO Sound"@en;
+  :sales "2,264,500";
+  :year "2021" .
+
+:Views a :album;
+  :artist :Drake;
+  :genre "Hip Hop";
+  :name "Views";
+  :recordLabel "OVO Sound"@en;
+  :sales "7,657,000";
+  :year "2016" .
+
+:Movie%20Soundtrack a :artist;
+  :name "Movie Soundtrack" .
+
+:Bohemian%20Rhapsody a :album;
+  :artist :Movie%20Soundtrack;
+  :genre "Rock";
+  :name "Bohemian Rhapsody";
+  :sales "2,585,920";
+  :year "2018" .
+
+:Moana a :album;
+  :artist :Movie%20Soundtrack;
+  :genre "Pop";
+  :name "Moana";
+  :sales "2,727,078";
+  :year "2016" .
+
+:Map%20Of%20The%20Soul%3A%207 a :album;
+  :artist :BTS;
+  :genre "Pop";
+  :name "Map Of The Soul: 7";
+  :recordLabel "Big Hit Music"@en, "Dreamus"@en;
+  :sales "6,829,450";
+  :year "2020" .
+
+:A%20Star%20Is%20Born a :album;
+  :artist :Movie%20Soundtrack;
+  :genre "Pop";
+  :name "A Star Is Born";
+  :sales "4,050,810";
+  :year "2018" .
+
+:The%20Weeknd a :artist;
+  :name "The Weeknd" .
+
+:Starboy a :album;
+  :artist :The%20Weeknd;
+  :genre "R&B";
+  :name "Starboy";
+  :recordLabel "Republic Records"@en, "XO"@en;
+  :sales "4,421,666";
+  :year "2016" .
+
+:Beauty%20Behind%20The%20Madness a :album;
+  :artist :The%20Weeknd;
+  :genre "R&B";
+  :name "Beauty Behind The Madness";
+  :recordLabel "Republic Records"@en;
+  :sales "5,299,588";
+  :year "2015" .
+
+:J.%20Cole a :artist;
+  :name "J. Cole" .
+
+:2014%20Forest%20Hills%20Drive a :album;
+  :artist :J.%20Cole;
+  :genre "Hip Hop";
+  :name "2014 Forest Hills Drive";
+  :recordLabel "Columbia Records"@en;
+  :sales "3,230,000";
+  :year "2014" .
+
+:Post%20Malone a :artist;
+  :name "Post Malone" .
+
+:Beerbongs%20%26%20Bentleys a :album;
+  :artist :Post%20Malone;
+  :genre "Hip Hop";
+  :name "Beerbongs & Bentleys";
+  :recordLabel "Republic Records"@en;
+  :sales "6,636,118";
+  :year "2018" .
+
+:Taylor%20Swift a :artist;
+  :name "Taylor Swift" .
+
+:Folklore a :album;
+  :artist :Taylor%20Swift;
+  :genre "Pop";
+  :name "Folklore";
+  :recordLabel "Republic Records"@en;
+  :sales "4,115,487";
+  :year "2020" .
+
+:Chris%20Stapleton a :artist;
+  :name "Chris Stapleton" .
+
+:Traveller a :album;
+  :artist :Chris%20Stapleton;
+  :genre "Country";
+  :name "Traveller";
+  :recordLabel "Mercury Records"@en;
+  :sales "4,147,000";
+  :year "2015" .
+
+:Lover a :album;
+  :artist :Taylor%20Swift;
+  :genre "Pop";
+  :name "Lover";
+  :recordLabel "Republic Records"@en;
+  :sales "4,787,733";
+  :year "2019" .
+
+:Lil%20Baby a :artist;
+  :name "Lil Baby" .
+
+:My%20Turn a :album;
+  :artist :Lil%20Baby;
+  :genre "Hip Hop";
+  :name "My Turn";
+  :recordLabel "Motown"@en, "Quality Control Music"@en, "Capitol Records"@en;
+  :sales "3,920,000";
+  :year "2020" .
+
+:Luke%20Combs a :artist;
+  :name "Luke Combs" .
+
+:What%20You%20See%20Is%20What%20You%20Get a :album;
+  :artist :Luke%20Combs;
+  :genre "Country";
+  :name "What You See Is What You Get";
+  :recordLabel "Columbia Nashville"@en;
+  :sales "3,357,000";
+  :year "2019" .
+
+:Juice%20Wrld a :artist;
+  :name "Juice Wrld" .
+
+:Legends%20Never%20Die a :album;
+  :artist :Juice%20Wrld;
+  :genre "Hip Hop";
+  :name "Legends Never Die";
+  :recordLabel "Interscope Records"@en;
+  :sales "3,045,000";
+  :year "2020" .
+
+:Travis%20Scott a :artist;
+  :name "Travis Scott" .
+
+:Astroworld a :album;
+  :artist :Travis%20Scott;
+  :genre "Hip Hop";
+  :name "Astroworld";
+  :recordLabel "Cactus Jack Records"@en, "Epic Records"@en, "Grand Hustle Records"@en;
+  :sales "4,907,811";
+  :year "2018" .
+
+:Adele a :artist;
+  :name "Adele" .
+
+:30 a :album;
+  :artist :Adele;
+  :genre "Pop";
+  :name "30";
+  :recordLabel "Sony Music"@en, "Columbia Records"@en;
+  :sales "4,485,025";
+  :year "2021" .
+
+:Pop%20Smoke a :artist;
+  :name "Pop Smoke" .
+
+:Shoot%20For%20The%20Stars%2C%20Aim%20For%20The%20Moon a :album;
+  :artist :Pop%20Smoke;
+  :genre "Hip Hop";
+  :name "Shoot For The Stars, Aim For The Moon";
+  :recordLabel "Republic Records"@en, "Victor Victor Worldwide"@en;
+  :sales "4,777,389";
+  :year "2020" .
+
+:After%20House a :album;
+  :artist :The%20Weeknd;
+  :genre "R&B";
+  :name "After House";
+  :sales "4,402,942";
+  :year "2020" .
+
+:Reputation a :album;
+  :artist :Taylor%20Swift;
+  :genre "Pop";
+  :name "Reputation";
+  :recordLabel "Big Machine Records"@en;
+  :sales "5,746,523";
+  :year "2017" .
+
+:Kendrick%20Lamar a :artist;
+  :name "Kendrick Lamar" .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/Damn.> a :album;
+  :artist :Kendrick%20Lamar;
+  :genre "Hip Hop";
+  :name "Damn.";
+  :recordLabel "Interscope Records"@en, "Top Dawg Entertainment"@en, "Aftermath Entertainment"@en;
+  :sales "4,070,414";
+  :year "2017" .
+
+:Khalid a :artist;
+  :name "Khalid" .
+
+:American%20Teen a :album;
+  :artist :Khalid;
+  :genre "R&B";
+  :name "American Teen";
+  :recordLabel "Columbia Records"@en;
+  :sales "3,681,211";
+  :year "2017" .
+
+:Hozier a :artist, :album;
+  :artist :Hozier;
+  :genre "Blues";
+  :name "Hozier";
+  :sales "4,413,503";
+  :year "2014" .
+
+:Twenty%20One%20Pilots a :artist;
+  :name "Twenty One Pilots" .
+
+:Blurryface a :album;
+  :artist :Twenty%20One%20Pilots;
+  :genre "Hip Hop";
+  :name "Blurryface";
+  :recordLabel "Fueled by Ramen"@en;
+  :sales "6,500,000";
+  :year "2015" .
+
+:Hollywood%27s%20Bleeding a :album;
+  :artist :Post%20Malone;
+  :genre "Hip Hop";
+  :name "Hollywood's Bleeding";
+  :recordLabel "Republic Records"@en;
+  :sales "6,243,665";
+  :year "2019" .
+
+:Stoney a :album;
+  :artist :Post%20Malone;
+  :genre "Hip Hop";
+  :name "Stoney";
+  :recordLabel "Republic Records"@en;
+  :sales "6,111,355";
+  :year "2016" .
+
+:Ed%20Sheeran a :artist;
+  :name "Ed Sheeran" .
+
+:Multiply a :album;
+  :artist :Ed%20Sheeran;
+  :genre "Pop";
+  :name "Multiply";
+  :sales "11,879,785";
+  :year "2014" .
+
+:No.%206%20Collaborations%20Project a :album;
+  :artist :Ed%20Sheeran;
+  :genre "Pop";
+  :name "No. 6 Collaborations Project";
+  :recordLabel "Atlantic Records"@en, "Asylum Records"@en;
+  :sales "2,551,838";
+  :year "2019" .
+
+:1989 a :album;
+  :artist :Taylor%20Swift;
+  :genre "Pop";
+  :name "1989";
+  :recordLabel "Big Machine Records"@en;
+  :sales "14,332,116";
+  :year "2014" .
+
+:25 a :album;
+  :artist :Adele;
+  :genre "Pop";
+  :name "25";
+  :recordLabel "Columbia Records"@en, "XL Recordings"@en;
+  :sales "23,000,000";
+  :year "2015" .
+
+:Cardi%20B a :artist;
+  :name "Cardi B" .
+
+:Invasion%20Of%20Privacy a :album;
+  :artist :Cardi%20B;
+  :genre "Hip Hop";
+  :name "Invasion Of Privacy";
+  :recordLabel "Atlantic Records"@en;
+  :sales "3,376,138";
+  :year "2018" .
+
+:Justin%20Bieber a :artist;
+  :name "Justin Bieber" .
+
+:Purpose a :album;
+  :artist :Justin%20Bieber;
+  :genre "Pop";
+  :name "Purpose";
+  :recordLabel "RBMG Records"@en, "Def Jam Recordings"@en;
+  :sales "14,000,000";
+  :year "2015" .
+
+:Chris%20Lee a :artist;
+  :name "Chris Lee" .
+
+:Growing%20Wild a :album;
+  :artist :Chris%20Lee;
+  :genre "Pop";
+  :name "Growing Wild";
+  :sales "3,418,440";
+  :year "2016" .
+
+:Harry%20Styles a :artist;
+  :name "Harry Styles" .
+
+:Fine%20Line a :album;
+  :artist :Harry%20Styles;
+  :genre "Pop";
+  :name "Fine Line";
+  :recordLabel "Columbia Records"@en;
+  :sales "3,646,799";
+  :year "2019" .
+
+:Divide a :album;
+  :artist :Ed%20Sheeran;
+  :genre "Pop";
+  :name "Divide";
+  :recordLabel "Atlantic Records"@en, "Asylum Records"@en;
+  :sales "13,430,805";
+  :year "2017" .
+
+:Beyonce a :artist;
+  :name "Beyonce" .
+
+:Lemonade a :album;
+  :artist :Beyonce;
+  :genre "Pop";
+  :name "Lemonade";
+  :recordLabel "Columbia Records"@en, "Parkwood Entertainment"@en;
+  :sales "3,661,560";
+  :year "2016" .
+
+:Coldplay a :artist;
+  :name "Coldplay" .
+
+:A%20Head%20Full%20Of%20Dreams a :album;
+  :artist :Coldplay;
+  :genre "Rock";
+  :name "A Head Full Of Dreams";
+  :recordLabel "Parlophone"@en;
+  :sales "6,000,000";
+  :year "2015" .
+
+:Justice a :album;
+  :artist :Justin%20Bieber;
+  :genre "Pop";
+  :name "Justice";
+  :recordLabel "Def Jam Recordings"@en, "School Boy Records"@en;
+  :sales "3,051,131";
+  :year "2021" .
+
+:Bryson%20Tiller a :artist;
+  :name "Bryson Tiller" .
+
+:Trapsoul a :album;
+  :artist :Bryson%20Tiller;
+  :genre "R&B";
+  :name "Trapsoul";
+  :recordLabel "RCA Records"@en;
+  :sales "3,190,000";
+  :year "2017" .
+
+:One%20Direction a :artist;
+  :name "One Direction" .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/Made%20In%20The%20A.M.> a :album;
+  :artist :One%20Direction;
+  :genre "Pop";
+  :name "Made In The A.M.";
+  :recordLabel "Columbia Records"@en;
+  :sales "3,376,423";
+  :year "2015" .
+
+:Guardians%20Of%20The%20Galaxy a :album;
+  :artist :Movie%20Soundtrack;
+  :genre "Rock";
+  :name "Guardians Of The Galaxy";
+  :sales "3,186,458";
+  :year "2014" .
+
+:Doja%20Cat a :artist;
+  :name "Doja Cat" .
+
+:Planet%20Her a :album;
+  :artist :Doja%20Cat;
+  :genre "Pop";
+  :name "Planet Her";
+  :recordLabel "RCA Records"@en, "Kemosabe Records"@en;
+  :sales "1,909,009";
+  :year "2021" .
+
+:Love%20Yourself%3A%20Tear a :album;
+  :artist :BTS;
+  :genre "Pop";
+  :name "Love Yourself: Tear";
+  :recordLabel "Hybe Corporation"@en;
+  :sales "3,363,039";
+  :year "2018" .
+
+:Rihanna a :artist;
+  :name "Rihanna" .
+
+:Anti a :album;
+  :artist :Rihanna;
+  :genre "Pop";
+  :name "Anti";
+  :recordLabel "Roc Nation"@en, "Westbury Road Entertainment"@en;
+  :sales "4,207,235";
+  :year "2016" .
+
+:Four a :album;
+  :artist :One%20Direction;
+  :genre "Pop";
+  :name "Four";
+  :recordLabel "Columbia Records"@en;
+  :sales "3,200,000";
+  :year "2014" .
+
+:This%20One%27s%20For%20You a :album;
+  :artist :Luke%20Combs;
+  :genre "Country";
+  :name "This One's For You";
+  :recordLabel "Columbia Records"@en;
+  :sales "3,371,000";
+  :year "2017" .
+
+:Ghost%20Stories a :album;
+  :artist :Coldplay;
+  :genre "Rock";
+  :name "Ghost Stories";
+  :recordLabel "Parlophone"@en;
+  :sales "3,700,000";
+  :year "2014" .
+
+:Ariana%20Grande a :artist;
+  :name "Ariana Grande" .
+
+:Thank%20U%2C%20Next a :album;
+  :artist :Ariana%20Grande;
+  :genre "Pop";
+  :name "Thank U, Next";
+  :recordLabel "Republic Records"@en;
+  :sales "3,665,436";
+  :year "2019" .
+
+:Billie%20Eilish a :artist;
+  :name "Billie Eilish" .
+
+:When%20We%20All%20Fall%20Asleep%2C%20Where%20Do%20We%20Go%3F a :album;
+  :artist :Billie%20Eilish;
+  :genre "Pop";
+  :name "When We All Fall Asleep, Where Do We Go?";
+  :recordLabel "Interscope Records"@en, "Darkroom"@en;
+  :sales "6,031,516";
+  :year "2019" .
+
+:Big%20Bang a :artist;
+  :name "Big Bang" .
+
+:Made a :album;
+  :artist :Big%20Bang;
+  :genre "Pop";
+  :name "Made";
+  :recordLabel "YG Entertainment"@en, "YGEX"@en;
+  :sales "3,189,149";
+  :year "2016" .
+
+:My%20Everything a :album;
+  :artist :Ariana%20Grande;
+  :genre "Pop";
+  :name "My Everything";
+  :recordLabel "Republic Records"@en;
+  :sales "3,346,212";
+  :year "2014" .
+
+:Goodbye%20%26%20Good%20Riddance a :album;
+  :artist :Juice%20Wrld;
+  :genre "Hip Hop";
+  :name "Goodbye & Good Riddance";
+  :recordLabel "Interscope Records"@en;
+  :sales "3,522,713";
+  :year "2018" .
+
+:Maroon%205 a :artist;
+  :name "Maroon 5" .
+
+:V a :album;
+  :artist :Maroon%205;
+  :genre "Pop";
+  :name "V";
+  :recordLabel "Interscope Records"@en;
+  :sales "4,230,464";
+  :year "2014" .
+
+:The%20Greatest%20Showman a :album;
+  :artist :Movie%20Soundtrack;
+  :genre "Pop";
+  :name "The Greatest Showman";
+  :sales "6,295,619";
+  :year "2017" .
+
+:Dangerous%20Woman a :album;
+  :artist :Ariana%20Grande;
+  :genre "Pop";
+  :name "Dangerous Woman";
+  :recordLabel "Republic Records"@en;
+  :sales "3,462,374";
+  :year "2016" .
+
+:Sean%20Mendes a :artist;
+  :name "Sean Mendes" .
+
+:Handwritten a :album;
+  :artist :Sean%20Mendes;
+  :genre "Pop";
+  :name "Handwritten";
+  :sales "2,655,000";
+  :year "2015" .
+
+:Imagine%20Dragons a :artist;
+  :name "Imagine Dragons" .
+
+:Evolve a :album;
+  :artist :Imagine%20Dragons;
+  :genre "Rock";
+  :name "Evolve";
+  :recordLabel "Interscope Records"@en, "KIDinaKORNER"@en;
+  :sales "4,790,478";
+  :year "2017" .
+
+:NCT%20127 a :artist;
+  :name "NCT 127" .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/Sticker%20/%20Favorite> a :album;
+  :artist :NCT%20127;
+  :genre "Pop";
+  :name "Sticker / Favorite";
+  :sales "3,498,564";
+  :year "2021" .
+
+:XXXTentacion a :artist;
+  :name "XXXTentacion" .
+
+:%3F a :album;
+  :artist :XXXTentacion;
+  :genre "Hip Hop";
+  :name "?";
+  :sales "3,932,852";
+  :year "2018" .
+
+:Dua%20Lipa a :artist;
+  :name "Dua Lipa" .
+
+:Future%20Nostalgia a :album;
+  :artist :Dua%20Lipa;
+  :genre "Pop";
+  :name "Future Nostalgia";
+  :recordLabel "Warner Records"@en;
+  :sales "3,332,300";
+  :year "2020" .
+
+:Lay a :artist;
+  :name "Lay" .
+
+:Lit a :album;
+  :artist :Lay;
+  :genre "Hip Hop";
+  :name "Lit";
+  :sales "2,741,096";
+  :year "2020" .
+
+:NCT%20Dream a :artist;
+  :name "NCT Dream" .
+
+:Hot%20Sauce a :album;
+  :artist :NCT%20Dream;
+  :genre "Pop";
+  :name "Hot Sauce";
+  :recordLabel "SM Entertainment"@en;
+  :sales "3,633,287";
+  :year "2021" .
+
+:Olivia%20Rodrigo a :artist;
+  :name "Olivia Rodrigo" .
+
+:Sour a :album;
+  :artist :Olivia%20Rodrigo;
+  :genre "Pop";
+  :name "Sour";
+  :recordLabel "Geffen Records"@en;
+  :sales "3,830,500";
+  :year "2021" .
+
+:Bruno%20Mars a :artist;
+  :name "Bruno Mars" .
+
+:24k%20Magic a :album;
+  :artist :Bruno%20Mars;
+  :genre "Pop";
+  :name "24k Magic";
+  :recordLabel "Atlantic Records"@en;
+  :sales "4,170,954";
+  :year "2016" .
+
+:Sam%20Smith a :artist;
+  :name "Sam Smith" .
+
+:In%20The%20Lonely%20Hour a :album;
+  :artist :Sam%20Smith;
+  :genre "Pop";
+  :name "In The Lonely Hour";
+  :recordLabel "Capitol Records"@en;
+  :sales "9,216,352";
+  :year "2014" .
+
+:Meghan%20Trainor a :artist;
+  :name "Meghan Trainor" .
+
+:Title a :album;
+  :artist :Meghan%20Trainor;
+  :genre "Pop";
+  :name "Title";
+  :recordLabel "Epic Records"@en;
+  :sales "3,885,000";
+  :year "2015" .
+
+:Love%20Yourself%3A%20Her a :album;
+  :artist :BTS;
+  :genre "Pop";
+  :name "Love Yourself: Her";
+  :sales "3,091,731";
+  :year "2017" .
+
+:Be a :album;
+  :artist :BTS;
+  :genre "Pop";
+  :name "Be";
+  :recordLabel "Big Hit Music"@en;
+  :sales "5,397,015";
+  :year "2020" .
+
+:Map%20Of%20The%20Soul%3A%20Persona a :album;
+  :artist :BTS;
+  :genre "Pop";
+  :name "Map Of The Soul: Persona";
+  :sales "5,670,554";
+  :year "2019" .
+
+:R1SE a :artist;
+  :name "R1SE" .
+
+:Going%20To%20Powerfully%20Burst a :album;
+  :artist :R1SE;
+  :genre "Pop";
+  :name "Going To Powerfully Burst";
+  :sales "3,080,507";
+  :year "2019" .
+
+:Blackpink a :artist;
+  :name "Blackpink" .
+
+:The%20Album a :album;
+  :artist :Blackpink;
+  :genre "Pop";
+  :name "The Album";
+  :recordLabel "Interscope Records"@en, "YG Entertainment"@en;
+  :sales "2,947,398";
+  :year "2020" .
+
+:Cai%20Xukun a :artist;
+  :name "Cai Xukun" .
+
+:迷 a :album;
+  :artist :Cai%20Xukun;
+  :genre "Hip Hop";
+  :name "迷";
+  :sales "3,402,981";
+  :year "2021" .
+
+:Seventeen a :artist;
+  :name "Seventeen" .
+
+:Attacca a :album;
+  :artist :Seventeen;
+  :genre "Pop";
+  :name "Attacca";
+  :recordLabel "Pledis Entertainment"@en;
+  :sales "2,401,368";
+  :year "2021" .

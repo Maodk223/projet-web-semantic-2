@@ -1,0 +1,715 @@
+@base <http://example.com/base/> .
+@prefix bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/> .
+
+bc:Arashi a bc:artist;
+  bc:name "Arashi" .
+
+bc:5x20%20All%20The%20Best%21%21%201999-2019 a bc:album;
+  bc:name "5x20 All The Best!! 1999-2019";
+  bc:sales "3,300,000";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:Arashi .
+
+bc:Elton%20John a bc:artist;
+  bc:name "Elton John" .
+
+bc:Diamonds a bc:album;
+  bc:name "Diamonds";
+  bc:sales "3,220,000";
+  bc:year "2017";
+  bc:genre "Rock";
+  bc:artist bc:Elton%20John .
+
+bc:Broadway%20Soundtrack a bc:artist;
+  bc:name "Broadway Soundtrack" .
+
+bc:Hamilton a bc:album;
+  bc:name "Hamilton";
+  bc:sales "4,835,000";
+  bc:year "2015";
+  bc:genre "Hip Hop";
+  bc:artist bc:Broadway%20Soundtrack .
+
+bc:BTS a bc:artist;
+  bc:name "BTS" .
+
+bc:Love%20Yourself%3A%20Answer a bc:album;
+  bc:name "Love Yourself: Answer";
+  bc:sales "4,866,789";
+  bc:year "2018";
+  bc:genre "Pop";
+  bc:artist bc:BTS .
+
+bc:Morgan%20Wallen a bc:artist;
+  bc:name "Morgan Wallen" .
+
+bc:Dangerous%3A%20The%20Double%20Album a bc:album;
+  bc:name "Dangerous: The Double Album";
+  bc:sales "3,461,000";
+  bc:year "2021";
+  bc:genre "Country";
+  bc:artist bc:Morgan%20Wallen .
+
+bc:Drake a bc:artist;
+  bc:name "Drake" .
+
+bc:Scorpion a bc:album;
+  bc:name "Scorpion";
+  bc:sales "6,133,983";
+  bc:year "2018";
+  bc:genre "Hip Hop";
+  bc:artist bc:Drake .
+
+bc:Certified%20Lover%20Boy a bc:album;
+  bc:name "Certified Lover Boy";
+  bc:sales "2,264,500";
+  bc:year "2021";
+  bc:genre "Hip Hop";
+  bc:artist bc:Drake .
+
+bc:Views a bc:album;
+  bc:name "Views";
+  bc:sales "7,657,000";
+  bc:year "2016";
+  bc:genre "Hip Hop";
+  bc:artist bc:Drake .
+
+bc:Movie%20Soundtrack a bc:artist;
+  bc:name "Movie Soundtrack" .
+
+bc:Bohemian%20Rhapsody a bc:album;
+  bc:name "Bohemian Rhapsody";
+  bc:sales "2,585,920";
+  bc:year "2018";
+  bc:genre "Rock";
+  bc:artist bc:Movie%20Soundtrack .
+
+bc:Moana a bc:album;
+  bc:name "Moana";
+  bc:sales "2,727,078";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Movie%20Soundtrack .
+
+bc:Map%20Of%20The%20Soul%3A%207 a bc:album;
+  bc:name "Map Of The Soul: 7";
+  bc:sales "6,829,450";
+  bc:year "2020";
+  bc:genre "Pop";
+  bc:artist bc:BTS .
+
+bc:A%20Star%20Is%20Born a bc:album;
+  bc:name "A Star Is Born";
+  bc:sales "4,050,810";
+  bc:year "2018";
+  bc:genre "Pop";
+  bc:artist bc:Movie%20Soundtrack .
+
+bc:The%20Weeknd a bc:artist;
+  bc:name "The Weeknd" .
+
+bc:Starboy a bc:album;
+  bc:name "Starboy";
+  bc:sales "4,421,666";
+  bc:year "2016";
+  bc:genre "R&B";
+  bc:artist bc:The%20Weeknd .
+
+bc:Beauty%20Behind%20The%20Madness a bc:album;
+  bc:name "Beauty Behind The Madness";
+  bc:sales "5,299,588";
+  bc:year "2015";
+  bc:genre "R&B";
+  bc:artist bc:The%20Weeknd .
+
+bc:J.%20Cole a bc:artist;
+  bc:name "J. Cole" .
+
+bc:2014%20Forest%20Hills%20Drive a bc:album;
+  bc:name "2014 Forest Hills Drive";
+  bc:sales "3,230,000";
+  bc:year "2014";
+  bc:genre "Hip Hop";
+  bc:artist bc:J.%20Cole .
+
+bc:Post%20Malone a bc:artist;
+  bc:name "Post Malone" .
+
+bc:Beerbongs%20%26%20Bentleys a bc:album;
+  bc:name "Beerbongs & Bentleys";
+  bc:sales "6,636,118";
+  bc:year "2018";
+  bc:genre "Hip Hop";
+  bc:artist bc:Post%20Malone .
+
+bc:Taylor%20Swift a bc:artist;
+  bc:name "Taylor Swift" .
+
+bc:Folklore a bc:album;
+  bc:name "Folklore";
+  bc:sales "4,115,487";
+  bc:year "2020";
+  bc:genre "Pop";
+  bc:artist bc:Taylor%20Swift .
+
+bc:Chris%20Stapleton a bc:artist;
+  bc:name "Chris Stapleton" .
+
+bc:Traveller a bc:album;
+  bc:name "Traveller";
+  bc:sales "4,147,000";
+  bc:year "2015";
+  bc:genre "Country";
+  bc:artist bc:Chris%20Stapleton .
+
+bc:Lover a bc:album;
+  bc:name "Lover";
+  bc:sales "4,787,733";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:Taylor%20Swift .
+
+bc:Lil%20Baby a bc:artist;
+  bc:name "Lil Baby" .
+
+bc:My%20Turn a bc:album;
+  bc:name "My Turn";
+  bc:sales "3,920,000";
+  bc:year "2020";
+  bc:genre "Hip Hop";
+  bc:artist bc:Lil%20Baby .
+
+bc:Luke%20Combs a bc:artist;
+  bc:name "Luke Combs" .
+
+bc:What%20You%20See%20Is%20What%20You%20Get a bc:album;
+  bc:name "What You See Is What You Get";
+  bc:sales "3,357,000";
+  bc:year "2019";
+  bc:genre "Country";
+  bc:artist bc:Luke%20Combs .
+
+bc:Juice%20Wrld a bc:artist;
+  bc:name "Juice Wrld" .
+
+bc:Legends%20Never%20Die a bc:album;
+  bc:name "Legends Never Die";
+  bc:sales "3,045,000";
+  bc:year "2020";
+  bc:genre "Hip Hop";
+  bc:artist bc:Juice%20Wrld .
+
+bc:Travis%20Scott a bc:artist;
+  bc:name "Travis Scott" .
+
+bc:Astroworld a bc:album;
+  bc:name "Astroworld";
+  bc:sales "4,907,811";
+  bc:year "2018";
+  bc:genre "Hip Hop";
+  bc:artist bc:Travis%20Scott .
+
+bc:Adele a bc:artist;
+  bc:name "Adele" .
+
+bc:30 a bc:album;
+  bc:name "30";
+  bc:sales "4,485,025";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:Adele .
+
+bc:Pop%20Smoke a bc:artist;
+  bc:name "Pop Smoke" .
+
+bc:Shoot%20For%20The%20Stars%2C%20Aim%20For%20The%20Moon a bc:album;
+  bc:name "Shoot For The Stars, Aim For The Moon";
+  bc:sales "4,777,389";
+  bc:year "2020";
+  bc:genre "Hip Hop";
+  bc:artist bc:Pop%20Smoke .
+
+bc:After%20House a bc:album;
+  bc:name "After House";
+  bc:sales "4,402,942";
+  bc:year "2020";
+  bc:genre "R&B";
+  bc:artist bc:The%20Weeknd .
+
+bc:Reputation a bc:album;
+  bc:name "Reputation";
+  bc:sales "5,746,523";
+  bc:year "2017";
+  bc:genre "Pop";
+  bc:artist bc:Taylor%20Swift .
+
+bc:Kendrick%20Lamar a bc:artist;
+  bc:name "Kendrick Lamar" .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/Damn.> a bc:album;
+  bc:name "Damn.";
+  bc:sales "4,070,414";
+  bc:year "2017";
+  bc:genre "Hip Hop";
+  bc:artist bc:Kendrick%20Lamar .
+
+bc:Khalid a bc:artist;
+  bc:name "Khalid" .
+
+bc:American%20Teen a bc:album;
+  bc:name "American Teen";
+  bc:sales "3,681,211";
+  bc:year "2017";
+  bc:genre "R&B";
+  bc:artist bc:Khalid .
+
+bc:Hozier a bc:artist, bc:album;
+  bc:name "Hozier";
+  bc:sales "4,413,503";
+  bc:year "2014";
+  bc:genre "Blues";
+  bc:artist bc:Hozier .
+
+bc:Twenty%20One%20Pilots a bc:artist;
+  bc:name "Twenty One Pilots" .
+
+bc:Blurryface a bc:album;
+  bc:name "Blurryface";
+  bc:sales "6,500,000";
+  bc:year "2015";
+  bc:genre "Hip Hop";
+  bc:artist bc:Twenty%20One%20Pilots .
+
+bc:Hollywood%27s%20Bleeding a bc:album;
+  bc:name "Hollywood's Bleeding";
+  bc:sales "6,243,665";
+  bc:year "2019";
+  bc:genre "Hip Hop";
+  bc:artist bc:Post%20Malone .
+
+bc:Stoney a bc:album;
+  bc:name "Stoney";
+  bc:sales "6,111,355";
+  bc:year "2016";
+  bc:genre "Hip Hop";
+  bc:artist bc:Post%20Malone .
+
+bc:Ed%20Sheeran a bc:artist;
+  bc:name "Ed Sheeran" .
+
+bc:Multiply a bc:album;
+  bc:name "Multiply";
+  bc:sales "11,879,785";
+  bc:year "2014";
+  bc:genre "Pop";
+  bc:artist bc:Ed%20Sheeran .
+
+bc:No.%206%20Collaborations%20Project a bc:album;
+  bc:name "No. 6 Collaborations Project";
+  bc:sales "2,551,838";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:Ed%20Sheeran .
+
+bc:1989 a bc:album;
+  bc:name "1989";
+  bc:sales "14,332,116";
+  bc:year "2014";
+  bc:genre "Pop";
+  bc:artist bc:Taylor%20Swift .
+
+bc:25 a bc:album;
+  bc:name "25";
+  bc:sales "23,000,000";
+  bc:year "2015";
+  bc:genre "Pop";
+  bc:artist bc:Adele .
+
+bc:Cardi%20B a bc:artist;
+  bc:name "Cardi B" .
+
+bc:Invasion%20Of%20Privacy a bc:album;
+  bc:name "Invasion Of Privacy";
+  bc:sales "3,376,138";
+  bc:year "2018";
+  bc:genre "Hip Hop";
+  bc:artist bc:Cardi%20B .
+
+bc:Justin%20Bieber a bc:artist;
+  bc:name "Justin Bieber" .
+
+bc:Purpose a bc:album;
+  bc:name "Purpose";
+  bc:sales "14,000,000";
+  bc:year "2015";
+  bc:genre "Pop";
+  bc:artist bc:Justin%20Bieber .
+
+bc:Chris%20Lee a bc:artist;
+  bc:name "Chris Lee" .
+
+bc:Growing%20Wild a bc:album;
+  bc:name "Growing Wild";
+  bc:sales "3,418,440";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Chris%20Lee .
+
+bc:Harry%20Styles a bc:artist;
+  bc:name "Harry Styles" .
+
+bc:Fine%20Line a bc:album;
+  bc:name "Fine Line";
+  bc:sales "3,646,799";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:Harry%20Styles .
+
+bc:Divide a bc:album;
+  bc:name "Divide";
+  bc:sales "13,430,805";
+  bc:year "2017";
+  bc:genre "Pop";
+  bc:artist bc:Ed%20Sheeran .
+
+bc:Beyonce a bc:artist;
+  bc:name "Beyonce" .
+
+bc:Lemonade a bc:album;
+  bc:name "Lemonade";
+  bc:sales "3,661,560";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Beyonce .
+
+bc:Coldplay a bc:artist;
+  bc:name "Coldplay" .
+
+bc:A%20Head%20Full%20Of%20Dreams a bc:album;
+  bc:name "A Head Full Of Dreams";
+  bc:sales "6,000,000";
+  bc:year "2015";
+  bc:genre "Rock";
+  bc:artist bc:Coldplay .
+
+bc:Justice a bc:album;
+  bc:name "Justice";
+  bc:sales "3,051,131";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:Justin%20Bieber .
+
+bc:Bryson%20Tiller a bc:artist;
+  bc:name "Bryson Tiller" .
+
+bc:Trapsoul a bc:album;
+  bc:name "Trapsoul";
+  bc:sales "3,190,000";
+  bc:year "2017";
+  bc:genre "R&B";
+  bc:artist bc:Bryson%20Tiller .
+
+bc:One%20Direction a bc:artist;
+  bc:name "One Direction" .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/Made%20In%20The%20A.M.> a bc:album;
+  bc:name "Made In The A.M.";
+  bc:sales "3,376,423";
+  bc:year "2015";
+  bc:genre "Pop";
+  bc:artist bc:One%20Direction .
+
+bc:Guardians%20Of%20The%20Galaxy a bc:album;
+  bc:name "Guardians Of The Galaxy";
+  bc:sales "3,186,458";
+  bc:year "2014";
+  bc:genre "Rock";
+  bc:artist bc:Movie%20Soundtrack .
+
+bc:Doja%20Cat a bc:artist;
+  bc:name "Doja Cat" .
+
+bc:Planet%20Her a bc:album;
+  bc:name "Planet Her";
+  bc:sales "1,909,009";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:Doja%20Cat .
+
+bc:Love%20Yourself%3A%20Tear a bc:album;
+  bc:name "Love Yourself: Tear";
+  bc:sales "3,363,039";
+  bc:year "2018";
+  bc:genre "Pop";
+  bc:artist bc:BTS .
+
+bc:Rihanna a bc:artist;
+  bc:name "Rihanna" .
+
+bc:Anti a bc:album;
+  bc:name "Anti";
+  bc:sales "4,207,235";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Rihanna .
+
+bc:Four a bc:album;
+  bc:name "Four";
+  bc:sales "3,200,000";
+  bc:year "2014";
+  bc:genre "Pop";
+  bc:artist bc:One%20Direction .
+
+bc:This%20One%27s%20For%20You a bc:album;
+  bc:name "This One's For You";
+  bc:sales "3,371,000";
+  bc:year "2017";
+  bc:genre "Country";
+  bc:artist bc:Luke%20Combs .
+
+bc:Ghost%20Stories a bc:album;
+  bc:name "Ghost Stories";
+  bc:sales "3,700,000";
+  bc:year "2014";
+  bc:genre "Rock";
+  bc:artist bc:Coldplay .
+
+bc:Ariana%20Grande a bc:artist;
+  bc:name "Ariana Grande" .
+
+bc:Thank%20U%2C%20Next a bc:album;
+  bc:name "Thank U, Next";
+  bc:sales "3,665,436";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:Ariana%20Grande .
+
+bc:Billie%20Eilish a bc:artist;
+  bc:name "Billie Eilish" .
+
+bc:When%20We%20All%20Fall%20Asleep%2C%20Where%20Do%20We%20Go%3F a bc:album;
+  bc:name "When We All Fall Asleep, Where Do We Go?";
+  bc:sales "6,031,516";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:Billie%20Eilish .
+
+bc:Big%20Bang a bc:artist;
+  bc:name "Big Bang" .
+
+bc:Made a bc:album;
+  bc:name "Made";
+  bc:sales "3,189,149";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Big%20Bang .
+
+bc:My%20Everything a bc:album;
+  bc:name "My Everything";
+  bc:sales "3,346,212";
+  bc:year "2014";
+  bc:genre "Pop";
+  bc:artist bc:Ariana%20Grande .
+
+bc:Goodbye%20%26%20Good%20Riddance a bc:album;
+  bc:name "Goodbye & Good Riddance";
+  bc:sales "3,522,713";
+  bc:year "2018";
+  bc:genre "Hip Hop";
+  bc:artist bc:Juice%20Wrld .
+
+bc:Maroon%205 a bc:artist;
+  bc:name "Maroon 5" .
+
+bc:V a bc:album;
+  bc:name "V";
+  bc:sales "4,230,464";
+  bc:year "2014";
+  bc:genre "Pop";
+  bc:artist bc:Maroon%205 .
+
+bc:The%20Greatest%20Showman a bc:album;
+  bc:name "The Greatest Showman";
+  bc:sales "6,295,619";
+  bc:year "2017";
+  bc:genre "Pop";
+  bc:artist bc:Movie%20Soundtrack .
+
+bc:Dangerous%20Woman a bc:album;
+  bc:name "Dangerous Woman";
+  bc:sales "3,462,374";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Ariana%20Grande .
+
+bc:Sean%20Mendes a bc:artist;
+  bc:name "Sean Mendes" .
+
+bc:Handwritten a bc:album;
+  bc:name "Handwritten";
+  bc:sales "2,655,000";
+  bc:year "2015";
+  bc:genre "Pop";
+  bc:artist bc:Sean%20Mendes .
+
+bc:Imagine%20Dragons a bc:artist;
+  bc:name "Imagine Dragons" .
+
+bc:Evolve a bc:album;
+  bc:name "Evolve";
+  bc:sales "4,790,478";
+  bc:year "2017";
+  bc:genre "Rock";
+  bc:artist bc:Imagine%20Dragons .
+
+bc:NCT%20127 a bc:artist;
+  bc:name "NCT 127" .
+
+<https://ecampus.paris-saclay.fr/wod/baradji-cannou/Sticker%20/%20Favorite> a bc:album;
+  bc:name "Sticker / Favorite";
+  bc:sales "3,498,564";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:NCT%20127 .
+
+bc:XXXTentacion a bc:artist;
+  bc:name "XXXTentacion" .
+
+bc:%3F a bc:album;
+  bc:name "?";
+  bc:sales "3,932,852";
+  bc:year "2018";
+  bc:genre "Hip Hop";
+  bc:artist bc:XXXTentacion .
+
+bc:Dua%20Lipa a bc:artist;
+  bc:name "Dua Lipa" .
+
+bc:Future%20Nostalgia a bc:album;
+  bc:name "Future Nostalgia";
+  bc:sales "3,332,300";
+  bc:year "2020";
+  bc:genre "Pop";
+  bc:artist bc:Dua%20Lipa .
+
+bc:Lay a bc:artist;
+  bc:name "Lay" .
+
+bc:Lit a bc:album;
+  bc:name "Lit";
+  bc:sales "2,741,096";
+  bc:year "2020";
+  bc:genre "Hip Hop";
+  bc:artist bc:Lay .
+
+bc:NCT%20Dream a bc:artist;
+  bc:name "NCT Dream" .
+
+bc:Hot%20Sauce a bc:album;
+  bc:name "Hot Sauce";
+  bc:sales "3,633,287";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:NCT%20Dream .
+
+bc:Olivia%20Rodrigo a bc:artist;
+  bc:name "Olivia Rodrigo" .
+
+bc:Sour a bc:album;
+  bc:name "Sour";
+  bc:sales "3,830,500";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:Olivia%20Rodrigo .
+
+bc:Bruno%20Mars a bc:artist;
+  bc:name "Bruno Mars" .
+
+bc:24k%20Magic a bc:album;
+  bc:name "24k Magic";
+  bc:sales "4,170,954";
+  bc:year "2016";
+  bc:genre "Pop";
+  bc:artist bc:Bruno%20Mars .
+
+bc:Sam%20Smith a bc:artist;
+  bc:name "Sam Smith" .
+
+bc:In%20The%20Lonely%20Hour a bc:album;
+  bc:name "In The Lonely Hour";
+  bc:sales "9,216,352";
+  bc:year "2014";
+  bc:genre "Pop";
+  bc:artist bc:Sam%20Smith .
+
+bc:Meghan%20Trainor a bc:artist;
+  bc:name "Meghan Trainor" .
+
+bc:Title a bc:album;
+  bc:name "Title";
+  bc:sales "3,885,000";
+  bc:year "2015";
+  bc:genre "Pop";
+  bc:artist bc:Meghan%20Trainor .
+
+bc:Love%20Yourself%3A%20Her a bc:album;
+  bc:name "Love Yourself: Her";
+  bc:sales "3,091,731";
+  bc:year "2017";
+  bc:genre "Pop";
+  bc:artist bc:BTS .
+
+bc:Be a bc:album;
+  bc:name "Be";
+  bc:sales "5,397,015";
+  bc:year "2020";
+  bc:genre "Pop";
+  bc:artist bc:BTS .
+
+bc:Map%20Of%20The%20Soul%3A%20Persona a bc:album;
+  bc:name "Map Of The Soul: Persona";
+  bc:sales "5,670,554";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:BTS .
+
+bc:R1SE a bc:artist;
+  bc:name "R1SE" .
+
+bc:Going%20To%20Powerfully%20Burst a bc:album;
+  bc:name "Going To Powerfully Burst";
+  bc:sales "3,080,507";
+  bc:year "2019";
+  bc:genre "Pop";
+  bc:artist bc:R1SE .
+
+bc:Blackpink a bc:artist;
+  bc:name "Blackpink" .
+
+bc:The%20Album a bc:album;
+  bc:name "The Album";
+  bc:sales "2,947,398";
+  bc:year "2020";
+  bc:genre "Pop";
+  bc:artist bc:Blackpink .
+
+bc:Cai%20Xukun a bc:artist;
+  bc:name "Cai Xukun" .
+
+bc:迷 a bc:album;
+  bc:name "迷";
+  bc:sales "3,402,981";
+  bc:year "2021";
+  bc:genre "Hip Hop";
+  bc:artist bc:Cai%20Xukun .
+
+bc:Seventeen a bc:artist;
+  bc:name "Seventeen" .
+
+bc:Attacca a bc:album;
+  bc:name "Attacca";
+  bc:sales "2,401,368";
+  bc:year "2021";
+  bc:genre "Pop";
+  bc:artist bc:Seventeen .

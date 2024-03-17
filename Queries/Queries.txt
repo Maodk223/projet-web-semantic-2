@@ -1,0 +1,187 @@
+/** Local Data **/
+
+PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?albumName ?artistName ?albumName ?genre ?year ?sales 
+WHERE {
+  ?album bc:name ?albumName ;
+         bc:artist ?artist ;
+         bc:genre ?genre ;
+         bc:year ?year ;
+         bc:sales ?sales .
+    	#bc:recordLabel ?recordLabel.
+
+    ?artist bc:name ?artistName
+}
+
+
+
+--------
+
+/** SERVICE Data **/
+
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?title ?publicationDate ?recordLabelName ?performer
+WHERE {
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?wikidataAlbum wdt:P31 wd:Q482994 ;
+        wdt:P264 ?recordLabel ;
+        wdt:P577 ?publicationDate ;
+        wdt:P175 ?performerEntity ;
+        rdfs:label ?title .
+        ?recordLabel rdfs:label ?recordLabelName .
+        ?performerEntity rdfs:label ?performer . 
+        
+        FILTER(LANG(?title) = 'en')
+        FILTER(LANG(?performer) = 'en')
+        FILTER(LANG(?recordLabelName) = 'en')
+    }
+}
+LIMIT 5
+
+
+--------
+
+/** CONSTRUCT **/
+
+PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+CONSTRUCT {
+    ?album     a bc:album ;
+    bc:name ?albumName2 ;
+    bc:artist ?artist ;
+    bc:genre ?genre ;
+    bc:year ?year ;
+    bc:recordLabel ?recordLabelName ;
+    bc:sales ?sales .
+}
+WHERE {
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?wikidataAlbum wdt:P31 wd:Q482994 ;
+        wdt:P264 ?recordLabel ;
+        wdt:P577 ?publicationDate ;
+        wdt:P175 ?performerEntity ;
+        rdfs:label ?albumName .
+        ?recordLabel rdfs:label ?recordLabelName .
+        ?performerEntity rdfs:label ?performer .
+        FILTER(LANG(?albumName) = 'en')
+        FILTER(?publicationDate > "2014-01-01T00:00:00Z"^^xsd:dateTime)
+        FILTER(LANG(?recordLabelName) = 'en')
+        FILTER(LANG(?performer) = 'en')
+    }
+    ?album bc:name ?albumName2 ;
+    bc:artist ?artist ;
+    bc:genre ?genre ;
+    bc:year ?year ;
+    bc:sales ?sales .
+    ?artist bc:name ?artistName .
+    FILTER(LCASE(STR(?albumName2)) = LCASE(STR(?albumName)))
+    FILTER(LCASE(REPLACE(STR(?artistName), "[èéêë]", "e")) = LCASE(REPLACE(STR(?performer), "[èéêë]", "e")))
+}
+LIMIT 10
+
+
+--------
+
+/** INSERT **/
+
+PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+INSERT {
+    ?album     a bc:album ;
+    bc:name ?albumName2 ;
+    bc:artist ?artist ;
+    bc:genre ?genre ;
+    bc:year ?year ;
+    bc:recordLabel ?recordLabelName ;
+    bc:sales ?sales .
+}
+WHERE {
+    SERVICE <https://query.wikidata.org/sparql> {
+        ?wikidataAlbum wdt:P31 wd:Q482994 ;
+        wdt:P264 ?recordLabel ;
+        wdt:P577 ?publicationDate ;
+        wdt:P175 ?performerEntity ;
+        rdfs:label ?albumName .
+        ?recordLabel rdfs:label ?recordLabelName .
+        ?performerEntity rdfs:label ?performer .
+        FILTER(LANG(?albumName) = 'en')
+        FILTER(?publicationDate > "2014-01-01T00:00:00Z"^^xsd:dateTime)
+        FILTER(LANG(?recordLabelName) = 'en')
+        FILTER(LANG(?performer) = 'en')
+    }
+    ?album bc:name ?albumName2 ;
+    bc:artist ?artist ;
+    bc:genre ?genre ;
+    bc:year ?year ;
+    bc:sales ?sales .
+    ?artist bc:name ?artistName .
+    FILTER(LCASE(STR(?albumName2)) = LCASE(STR(?albumName)))
+    FILTER(LCASE(REPLACE(STR(?artistName), "[èéêë]", "e")) = LCASE(REPLACE(STR(?performer), "[èéêë]", "e")))
+}
+
+
+--------
+
+/** Queries **/
+
+
+// Final query that answer our question //
+// -> nombre de vente moyen par album
+
+PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?recordLabel  (ROUND(SUM(xsd:integer(REPLACE(?sales, ",", "")))/COUNT(?album)) as ?ratio )
+WHERE {
+  ?album a bc:album;
+          bc:recordLabel ?recordLabel;
+          bc:sales ?sales.
+}
+GROUP BY ?recordLabel
+
+
+
+
+
+
+
+
+//annexes queries//
+//nombre d'album produits par un label //
+
+PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?recordLabel (COUNT(?album) as ?numberOfAlbums) 
+WHERE {
+  ?album a bc:album;
+          bc:recordLabel ?recordLabel;
+          bc:sales ?sales.
+}
+GROUP BY ?recordLabel
+
+
+//nombre de vente totale d'un label//
+PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?recordLabel (SUM(xsd:integer(REPLACE(?sales, ",", ""))) AS ?totalSales)
+WHERE {
+  ?album a bc:album;
+          bc:recordLabel ?recordLabel;
+          bc:sales ?sales.
+}
+GROUP BY ?recordLabel
+
+
