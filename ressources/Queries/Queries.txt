@@ -149,25 +149,27 @@ WHERE {
           bc:sales ?sales.
 }
 GROUP BY ?recordLabel
+ORDER BY DESC(?ratio)
 
 
---> Le label : XL Recordings a un ratio de vente moyen de 23 000 000 d'exemplaires vendus par album (4 album dans l'ère du streaming)
+--> Le label : XL Recordings a un ratio de vente moyen de 23 000 000 d'exemplaires vendus par album (1seul album dans l'ère du streaming)
 
 
 
 //annexes queries//
-//nombre d'album produits par un label //
 
+//nombre d'album produits par un label //
 PREFIX bc: <https://ecampus.paris-saclay.fr/wod/baradji-cannou/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
-SELECT ?recordLabel (COUNT(?album) as ?numberOfAlbums) 
+SELECT ?recordLabel (COUNT(?album) AS ?numberOfAlbums)
 WHERE {
   ?album a bc:album;
           bc:recordLabel ?recordLabel;
           bc:sales ?sales.
 }
 GROUP BY ?recordLabel
+ORDER BY DESC(?numberOfAlbums)
 
 --> Republic Records a produit 13 albums dans l'ère du streaming pour un totale de 61 265 506 albums vendus depuis l'ère du streaming
 
@@ -183,5 +185,6 @@ WHERE {
           bc:sales ?sales.
 }
 GROUP BY ?recordLabel
+ORDER BY DESC(?totalSales)
 
 
