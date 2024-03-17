@@ -1,16 +1,19 @@
-import csv
+#read out.csv with pandas
+import pandas as pd
 
-# Ouvrir le fichier CSV en mode lecture et un nouveau fichier CSV en mode écriture
-with open('Top_10_Albums_By_Year_Album_Length.csv.csv', 'r', newline='', encoding='utf-8') as input_file, \
-     open('cleaned.csv', 'w', newline='', encoding='utf-8') as output_file:
+#list of headers
+HEADER = ['Year', 'Artist', 'Album', 'Worldwide Sales (Est.)', 'Genre']
 
-    reader = csv.DictReader(input_file, delimiter=';')
-    writer = csv.DictWriter(output_file, fieldnames=reader.fieldnames, delimiter=';')
-    writer.writeheader()
+#read out.csv with pandas
+df = pd.read_csv('CSV/Top 10 Albums By Year Album Length - Sheet1.csv')
+df = df[HEADER].dropna()
 
-    # Parcourir chaque ligne du fichier d'entrée
-    for row in reader:
-        # Vérifier si la clé 'Year' existe et si sa valeur est supérieure ou égale à 2015
-        if 'Year' in row and int(row['Year']) >= 2014:
-            # Écrire la ligne dans le fichier de sortie
-            writer.writerow(row)
+#drop duplicates by column Album
+df = df.drop_duplicates(subset='Album')
+
+#keep if released after 2014
+df = df[df['Year'] >= 2014]
+
+df.to_csv('CSV/cleaned.csv', sep=';', index=False)
+
+

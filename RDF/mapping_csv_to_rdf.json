@@ -1,0 +1,292 @@
+{
+  "baseIRI": "http://example.com/base/",
+  "namespaces": {
+    "bc": "https://ecampus.paris-saclay.fr/wod/baradji-cannou/"
+  },
+  "subjectMappings": [
+    {
+      "propertyMappings": [],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Artist",
+          "source": "column"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "bc",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "artist"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "bc",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "name"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Artist",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Artist",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    },
+    {
+      "propertyMappings": [],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Album",
+          "source": "column"
+        }
+      },
+      "typeMappings": [
+        {
+          "transformation": {
+            "expression": "bc",
+            "language": "prefix"
+          },
+          "valueSource": {
+            "source": "constant",
+            "constant": "album"
+          }
+        }
+      ]
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "bc",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "name"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Album",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Album",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "bc",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "year"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Year",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Album",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "bc",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "sales"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Worldwide Sales (Est.)",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Album",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "bc",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "genre"
+            }
+          },
+          "values": [
+            {
+              "valueSource": {
+                "columnName": "Genre",
+                "source": "column"
+              },
+              "valueType": {
+                "type": "literal"
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Album",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    },
+    {
+      "propertyMappings": [
+        {
+          "property": {
+            "transformation": {
+              "expression": "bc",
+              "language": "prefix"
+            },
+            "valueSource": {
+              "source": "constant",
+              "constant": "artist"
+            }
+          },
+          "values": [
+            {
+              "transformation": {
+                "expression": "bc",
+                "language": "prefix"
+              },
+              "valueSource": {
+                "columnName": "Artist",
+                "source": "column"
+              },
+              "valueType": {
+                "propertyMappings": [],
+                "type": "iri",
+                "typeMappings": []
+              }
+            }
+          ]
+        }
+      ],
+      "subject": {
+        "transformation": {
+          "expression": "bc",
+          "language": "prefix"
+        },
+        "valueSource": {
+          "columnName": "Album",
+          "source": "column"
+        }
+      },
+      "typeMappings": []
+    }
+  ]
+}
